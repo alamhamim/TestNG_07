@@ -44,7 +44,7 @@ public class SeleniumHelper {
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 
 		File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-		Files.copy(SrcFile, new File("FirstTestNGClass/ScreenShots/shot" + x + ".png"));
+		Files.copy(SrcFile, new File("ScreenShots/shot"+x+".png"));
 
 	}
 }

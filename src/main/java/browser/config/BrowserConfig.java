@@ -12,7 +12,7 @@ public class BrowserConfig {
 	
 	public static WebDriver startApp(WebDriver driver, String browserName, String url) {
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 			System.out.println("Chrome is running");
 			Reporter.log("chrome is runnig");
@@ -30,7 +30,7 @@ public class BrowserConfig {
 			Reporter.log("Opera is runnig");
 			
 			
-		}else if (browserName.equalsIgnoreCase("Safari")) {
+		}else if (browserName.equalsIgnoreCase("safari")) {
 			System.setProperty("webdriver.safari.driver", "Drivers/safaridriver");
 			driver = new SafariDriver();
 			System.out.println("Safari is running");

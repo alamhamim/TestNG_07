@@ -8,11 +8,9 @@ public class DataDriven {
 	@DataProvider(name = "loginData")
 	public Object[][] dp() {
 		 
-		Object [][] o = new Object[2][2];
-		o[0][0] ="user1";
-		o[0][1]="pass1";
-		o[1][0] ="user2";
-		o[1][1]="pass2";
+		Object [][] o = new Object[1][2];
+		o[0][0] ="Admin";
+		o[0][1]="admin123";
 		return o;
 
 	}

@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 import com.util.SeleniumHelper;
 
@@ -20,20 +19,20 @@ public class LoginPage {
 	}
 
 	
-	@FindBy(name = "username")
+	@FindBy(id = "txtUsername")
 	WebElement userName;
 	
-	@FindBy(id = "password")
+	@FindBy(id = "txtPassword")
 	WebElement passWord;
 	
-	@FindBy(name = "loginbutton")
+	@FindBy(xpath = "//input[@id='btnLogin']")
 	WebElement loginButton;
 	
 	
 	public void loginTest(String userId, String pass) {
 		SeleniumHelper.type(userName, userId);
 		SeleniumHelper.type(passWord, pass);
-		SeleniumHelper.waitForElement(driver, loginButton, 10);
+		SeleniumHelper.waitForElement(driver, loginButton, 10).click();
 		
 		
 	}

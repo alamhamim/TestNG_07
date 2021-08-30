@@ -14,14 +14,17 @@ import com.util.SeleniumHelper;
 
 import browser.config.BrowserConfig;
 import data.config.ConfigDataProvider;
+ 
 
 public class BaseTest {
 	public WebDriver driver;
-	public ConfigDataProvider config;
+	ConfigDataProvider config;
 
 	@BeforeClass
 	public void getData() throws IOException {
-		config = new ConfigDataProvider();
+		 config = new ConfigDataProvider();
+		 
+	}
 
 	@BeforeMethod
 	public void startBrowser() {
@@ -30,7 +33,7 @@ public class BaseTest {
 	}
 
 	@AfterMethod
-	public void getResult(ITestResult result) {
+	public void getResult(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			SeleniumHelper.getScreenShot(driver);
 		}
